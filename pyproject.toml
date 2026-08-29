@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleet-incident-tracker"
+version = "0.1.0"
+description = "Fleet-level safety statistics for robot/AMR operations: incident rate per 1,000 operating hours, near-miss ratio, a u-chart (exposure-normalized SPC) trend, Pareto category breakdown, and per-unit outlier ranking."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Tsadi" }]
+dependencies = []
+
+[project.scripts]
+fleet-incident-tracker = "fleet_incident_tracker.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+viz = ["matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+include = ["fleet_incident_tracker*"]
